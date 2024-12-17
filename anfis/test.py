@@ -81,9 +81,10 @@ import pso as pso
 
 # Read example to run
 if len(sys.argv) != 2:
-    print("Usage: python test.py <example>")
+    print("Usage: python test.py <path> <example>")
     sys.exit(1)
-example = sys.argv[1]
+path = sys.argv[1]
+example = sys.argv[2]
 
 np.random.seed(1294404794)
 
@@ -108,7 +109,7 @@ if (example == 'plant'):
     # ANFIS: layout of [1, 1, 1, 1], 17 variables
     # Predicted/actual correlation values: 0.965 (training), 0.961 (test)
     # https://archive.ics.uci.edu/ml/datasets/Combined+Cycle+Power+Plant
-    data_file = 'plant_dataset.csv'
+    data_file = path+'/plant_dataset.csv'
     n_mf = [1, 1, 1, 1]
     nPop = 40
     epochs = 500
@@ -119,7 +120,7 @@ elif (example == 'stock'):
     # ANFIS: layout of [2, 2, 2], 82 variables
     # Predicted/actual correlation values: 0.883 (training), 0.871 (test)
     # https://archive.ics.uci.edu/ml/datasets/ISTANBUL+STOCK+EXCHANGE
-    data_file = 'stock_dataset.csv'
+    data_file = path+'/stock_dataset.csv'
     n_mf = [2, 2, 2]
     nPop = 100
     epochs = 500
@@ -131,7 +132,7 @@ elif (example == 'wine'):
     # ANFIS: layout of [3, 2], 123 variables
     # Predicted/actual accuracy values: 58.2% (training), 59.8% (test).
     # https://archive.ics.uci.edu/ml/datasets/Wine+Quality
-    data_file = 'wine_dataset.csv'
+    data_file = path+'/wine_dataset.csv'
     problem = 'C'
     n_mf = [3, 2]
     nPop = 40
@@ -143,7 +144,7 @@ elif (example == 'pulsar'):
     # ANFIS: layout of [3, 4, 2], 219 variables
     # Predicted/actual accuracy values: 97.9% (training), 97.7% (test).
     # https://archive.ics.uci.edu/ml/datasets/HTRU2
-    data_file = 'pulsar_dataset.csv'
+    data_file = path+'/pulsar_dataset.csv'
     problem = 'C'
     n_mf = [3, 4, 2]
     nPop = 40
