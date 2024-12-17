@@ -80,7 +80,7 @@ import pso as pso
 # ======= Examples ======= #
 
 # Read example to run
-if len(sys.argv) != 2:
+if len(sys.argv) != 3:
     print("Usage: python test.py <path> <example>")
     sys.exit(1)
 path = sys.argv[1]
